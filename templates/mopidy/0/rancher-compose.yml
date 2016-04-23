@@ -28,3 +28,5 @@ icecast:
   scale: 1
 mopidy:
   scale: 1
+mopidydata:
+  scale: 1
