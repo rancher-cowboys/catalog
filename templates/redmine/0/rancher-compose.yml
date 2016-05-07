@@ -1,6 +1,6 @@
 .catalog:
-  name: "Redmine"
-  version: "v3.2.1"
+  name: redmine
+  version: latest
   description: "Redmine Project Manager"
   uuid: redmine-0
   questions:
@@ -14,5 +14,5 @@
       description: This variable allows you to control if rake db:migrate is run on container start. Just set the variable to 1 and the migrate script will not automatically run on container start.
       required: false
       type: "int"
-Redmine:
+redmine:
   scale: 1
