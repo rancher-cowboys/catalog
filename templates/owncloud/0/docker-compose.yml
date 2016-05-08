@@ -1,0 +1,16 @@
+memcached:
+  image: memcached
+
+db:
+  image: mariadb
+  environment:
+    MYSQL_PASSWORD: owncloudpwd
+    MYSQL_USER: owncloud
+    MYSQL_DATABASE: owncloud
+    MYSQL_RANDOM_ROOT_PASSWORD: true
+
+owncloud:
+  image: ranchercb/owncloud
+  links:
+  - db
+  - memcached

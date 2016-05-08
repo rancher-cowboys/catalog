@@ -1,0 +1,8 @@
+.catalog:
+  name: owncloud
+  version: 9-apache
+  description: "A personal cloud which runs on your own server"
+  uuid: owncloud-0
+
+owncloud:
+scale: 1
