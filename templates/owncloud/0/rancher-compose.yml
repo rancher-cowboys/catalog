@@ -2,7 +2,7 @@
   name: owncloud
   version: 9-apache
   description: "A personal cloud which runs on your own server"
-  uuid: owncloud-0
+  uuid: owncloud-1
 
 owncloud:
-scale: 1
+  scale: 1
