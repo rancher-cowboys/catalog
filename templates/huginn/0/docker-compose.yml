@@ -1,0 +1,66 @@
+huginn-threaded:
+  environment:
+    APP_SECRET_TOKEN: ${APP_SECRET_TOKEN}
+    DATABASE_ADAPTER: ${DATABASE_ADAPTER}
+    DATABASE_NAME: ${DATABASE_NAME}
+    DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+    DATABASE_USERNAME: ${DATABASE_USERNAME}
+    RAILS_ENV: ${RAILS_ENV}
+    SMTP_USER_NAME: ${SMTP_USER_NAME}
+    SMTP_PASSWORD: ${SMTP_PASSWORD}
+    SMTP_SERVER: ${SMTP_SERVER}
+    SMTP_PORT: ${SMTP_PORT}
+    SMTP_AUTHENTICATION: ${SMTP_AUTHENTICATION}
+    SMTP_ENABLE_STARTTLS_AUTO: ${SMTP_ENABLE_STARTTLS_AUTO}
+    EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS}
+    SMTP_DOMAIN: ${SMTP_DOMAIN}
+  log_driver: ''
+  labels:
+    io.rancher.container.pull_image: always
+  command:
+  - /scripts/init
+  - bin/threaded.rb
+  log_opt: {}
+  image: cantino/huginn-single-process
+  links:
+  - 'mysql:'
+huginn-web:
+  ports:
+  - 51228:3000/tcp
+  environment:
+    APP_SECRET_TOKEN: ${APP_SECRET_TOKEN}
+    DATABASE_ADAPTER: ${DATABASE_ADAPTER}
+    DATABASE_NAME: ${DATABASE_NAME}
+    DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+    DATABASE_USERNAME: ${DATABASE_USERNAME}
+    RAILS_ENV: ${RAILS_ENV}
+    SMTP_USER_NAME: ${SMTP_USER_NAME}
+    SMTP_PASSWORD: ${SMTP_PASSWORD}
+    SMTP_SERVER: ${SMTP_SERVER}
+    SMTP_PORT: ${SMTP_PORT}
+    SMTP_AUTHENTICATION: ${SMTP_AUTHENTICATION}
+    SMTP_ENABLE_STARTTLS_AUTO: ${SMTP_ENABLE_STARTTLS_AUTO}
+    EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS}
+    SMTP_DOMAIN: ${SMTP_DOMAIN}
+  external_links:
+  - 'mysql/mysql:'
+  log_driver: ''
+  labels:
+    io.rancher.container.pull_image: always
+  log_opt: {}
+  image: cantino/huginn-single-process
+mysql:
+  environment:
+    MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
+  log_driver: ''
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  entrypoint:
+  - /entrypoint.sh
+  command:
+  - mysqld
+  log_opt: {}
+  image: mysql
+  volumes:
+  - /var/lib/mysql

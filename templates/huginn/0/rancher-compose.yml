@@ -1,0 +1,112 @@
+.catalog:
+  name: huginn
+  version: 2.14
+  description: "Build agents that monitor and act on your behalf. Your agents are standing by!"
+  uuid: huginn-1
+  questions:
+    - variable: APP_SECRET_TOKEN
+      label: The secret token used by the app
+      description:
+      required: true
+      type: "string"
+      default: "5bd139f9186b31a85336bb89cd1a1337078921134b2f48e022fd09c234d764d3e19b018b2ab789c6e0e04a1ac9e3365116368049660234c2038dc9990513d48c"
+    - variable: DATABASE_ADAPTER
+      label: The adapter of the database, as a rails adapters
+      description:
+      required: true
+      type: "string"
+      default: "mysql2"
+    - variable: DATABASE_NAME
+      label: The database schema name
+      description:
+      required: true
+      type: "string"
+      default: "huginn"
+    - variable: DATABASE_PASSWORD
+      label: The database schema password
+      description:
+      required: true
+      type: "string"
+      default: "mysqlP4$$"
+    - variable: DATABASE_USERNAME
+      label: The database schema username
+      description:
+      required: true
+      type: "string"
+      default: "root"
+    - variable: RAILS_ENV
+      label: Rails environment
+      description:
+      required: true
+      type: "string"
+      default: "production"
+    - variable: SMTP_USER_NAME
+      label: SMPT server username
+      description:
+      required: true
+      type: "string"
+      default: "admin@example.com"
+    - variable: SMTP_PASSWORD
+      label: SMPT server username
+      description:
+      required: true
+      type: "string"
+      default: "12345"
+    - variable: SMTP_SERVER
+      label: SMPT server hostname
+      description:
+      required: true
+      type: "string"
+      default: "smpt.example.com"
+    - variable: SMTP_PORT
+      label: SMPT server port
+      description:
+      required: true
+      type: "string"
+      default: "25"
+    - variable: SMTP_AUTHENTICATION
+      label: SMPT server authentication type
+      description:
+      required: true
+      type: "string"
+      default: "plain"
+    - variable: SMTP_ENABLE_STARTTLS_AUTO
+      label: SMPT server starttls
+      description:
+      required: true
+      type: "string"
+      default: "true"
+    - variable: EMAIL_FROM_ADDRESS
+      label: emails from
+      description:
+      required: true
+      type: "string"
+      default: "admin@example.com"
+    - variable: SMTP_DOMAIN
+      label: SMTP domain
+      description:
+      required: true
+      type: "string"
+      default: "example.com"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+huginn-threaded:
+  scale: 1
+huginn-web:
+  scale: 1
+mysql:
+  scale: 1
+
