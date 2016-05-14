@@ -88,21 +88,6 @@
       required: true
       type: "string"
       default: "example.com"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 huginn-threaded:
   scale: 1
 huginn-web:
