@@ -1,5 +1,5 @@
 mumble:
-  image: luzifer/mumble:latest
+  image: ranchercb/mumble:latest
   ports:
   - 64738:64738
   - 64738:64738/udp
