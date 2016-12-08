@@ -39,12 +39,14 @@
       type: "boolean"
       default: false
     - variable: HMD_URL_ADDPORT
-      label: set to add port on callback url (port 80 or 443 won't applied - only applied when domain is set)
+      label: Set to add port on callback url
+      description: Ports 80 and 443 won't be applied - only applied when domain is set
       required: true
       type: "boolean"
       default: false
     - variable: HMD_USECDN
-      label: set to use CDN resources or not (default is true)
+      label: Use CDN resources
+      description: Set to use CDN resources or local ones (default is CDN)
       required: true
       type: "boolean"
       default: true
