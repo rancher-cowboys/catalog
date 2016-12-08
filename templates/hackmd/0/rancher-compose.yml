@@ -1,0 +1,140 @@
+.catalog:
+  name: "HackMD"
+  version: "v1.0.0"
+  description: "Realtime collaborative markdown notes on all platforms"
+  uuid: hackmd-0
+  questions:
+    - variable: NODE_ENV
+      label: Production or development?
+      required: true
+      type: "enum"
+      options:
+      - production
+      - development
+      default: production
+    - variable: DEBUG
+      label: Enable debug?
+      description:
+      required: true
+      type: "boolean"
+      default: false
+    - variable: HMD_DOMAIN
+      label: Domain name
+      description: The FQDN for your hackMD installation
+      required: true
+      type: "string"
+    - variable: HMD_URL_PATH
+      label: Path
+      description: Sub path, in case you installed HackMD on a sub-folder
+      required: false
+      type: "string"
+    - variable: HMD_PORT
+      label: Port
+      required: true
+      type: "int"
+      default: 80
+    - variable: HMD_PROTOCOL_USESSL
+      label: Whether or not use SSL
+      required: true
+      type: "boolean"
+      default: false
+    - variable: HMD_URL_ADDPORT
+      label: set to add port on callback url (port 80 or 443 won't applied - only applied when domain is set)
+      required: true
+      type: "boolean"
+      default: false
+    - variable: HMD_USECDN
+      label: set to use CDN resources or not (default is true)
+      required: true
+      type: "boolean"
+      default: true
+    - variable: HMD_FACEBOOK_CLIENTID
+      label: Facebook API client id
+      required: false
+      type: "string"
+    - variable: HMD_FACEBOOK_CLIENTSECRET
+      label: Facebook API client secret
+      required: false
+      type: "string"
+    - variable: HMD_TWITTER_CONSUMERKEY
+      label: Twitter API consumer key
+      required: false
+      type: "string"
+    - variable: HMD_TWITTER_CONSUMERSECRET
+      label: Twitter API consumer secret
+      required: false
+      type: "string"
+    - variable: HMD_GITHUB_CLIENTID
+      label: GitHub API client id
+      required: false
+      type: "string"
+    - variable: HMD_GITHUB_CLIENTSECRET
+      label: GitHub API client secret
+      required: false
+      type: "string"
+    - variable: HMD_GITLAB_BASEURL
+      label: GitLab authentication endpoint, set to use other endpoint than gitlab.com
+      required: false
+      type: "string"
+    - variable: HMD_GITLAB_CLIENTID
+      label: GitLab API client id
+      required: false
+      type: "string"
+    - variable: HMD_GITLAB_CLIENTSECRET
+      label: GitLab API client secret
+      required: false
+      type: "string"
+    - variable: HMD_DROPBOX_CLIENTID
+      label: Dropbox API client id
+      required: false
+      type: "string"
+    - variable: HMD_DROPBOX_CLIENTSECRET
+      label: Dropbox API client secret
+      required: false
+      type: "string"
+    - variable: HMD_GOOGLE_CLIENTID
+      label: Google API client id
+      required: false
+      type: "string"
+    - variable: HMD_GOOGLE_CLIENTSECRET
+      label: Google API client secret
+      required: false
+      type: "string"
+    - variable: HMD_IMGUR_CLIENTID
+      label: Imgur API client id
+      required: false
+      type: "string"
+    - variable: HMD_EMAIL
+      label: Set to allow email register and signin
+      required: false
+      type: "boolean"
+    - variable: HMD_IMAGE_UPLOAD_TYPE
+      label: Where to upload image.
+      description: For S3, see the S3 Image Upload Guide
+      required: false
+      type: "enum"
+      options:
+      - imgur
+      - filesystem
+      - s3
+      default: filesystem
+    - variable: HMD_S3_ACCESS_KEY_ID
+      label: AWS access key id
+      required: false
+      type: "string"
+    - variable: HMD_S3_SECRET_ACCESS_KEY
+      label: AWS secret key
+      required: false
+      type: "string"
+    - variable: HMD_S3_REGION
+      label: AWS S3 region
+      required: false
+      type: "string"
+    - variable: HMD_S3_BUCKET
+      label: AWS S3 bucket name
+      required: false
+      type: "string"
+hackmd:
+  scale: 1
+hackmdPostgres:
+  scale: 1
