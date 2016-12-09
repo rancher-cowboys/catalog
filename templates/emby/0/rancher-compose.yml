@@ -10,5 +10,11 @@
       required: true
       type: string
       default: "Europe/Madrid"
+    - variable: EMBY_VOLUME
+      label: Volume
+      description: Set the location of your media. Will be mounted as /media inside the container.
+      required: true
+      default: /home/YOURUSER/Videos
+      type: string
 emby:
   scale: 1

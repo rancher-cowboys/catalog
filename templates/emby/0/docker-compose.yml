@@ -5,3 +5,4 @@ emby:
     TZ: "${EMBY_TIMEZONE}"
   volumes:
     - /srv/docker/emby:/config
+    - "${EMBY_VOLUME}:/media"
