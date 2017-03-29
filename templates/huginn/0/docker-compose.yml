@@ -23,7 +23,7 @@ huginn-threaded:
   log_opt: {}
   image: cantino/huginn-single-process
   links:
-  - 'mysql:'
+  - 'mysqlh'
 huginn-web:
   ports:
   - 51228:3000/tcp
@@ -43,13 +43,13 @@ huginn-web:
     EMAIL_FROM_ADDRESS: ${EMAIL_FROM_ADDRESS}
     SMTP_DOMAIN: ${SMTP_DOMAIN}
   external_links:
-  - 'mysql/mysql:'
+  - 'mysqlh'
   log_driver: ''
   labels:
     io.rancher.container.pull_image: always
   log_opt: {}
   image: cantino/huginn-single-process
-mysql:
+mysqlh:
   environment:
     MYSQL_ROOT_PASSWORD: ${DATABASE_PASSWORD}
   log_driver: ''
